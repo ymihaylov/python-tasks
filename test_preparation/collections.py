@@ -10,7 +10,7 @@ print(cute_animals[1:3]) # panda only
 print(cute_animals[1:-1])
 print(cute_animals[-1:0:-2])
 
-quit()
+# quit()
 
 # ---
 
@@ -116,9 +116,14 @@ print([(x, y) for x in [1, 2, 3] for y in [3, 1, 4] if x != y])
 # Set
 #  {int(math.sqrt(x)) for x in range(1,100)}
 # Dict
-# {i: chr(65+i) for i in range(10)}
+print({i: chr(65+i) for i in range(10)})
 
 # --
 # defaultdict - Values by default
 # can use something['owener'] without check
 
+pesho = {
+	'hello': 1
+}
+
+print(pesho)
