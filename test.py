@@ -6,5 +6,5 @@
 
 #37 Exceptions - def winter_is_here(): raise WhiteWalker() #25
 
-#17 Iterators - FALSE 
+#17 Iterators - FALSE
 #28 next() method
