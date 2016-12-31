@@ -6,19 +6,19 @@ CATEGORIES = {
     'наднормено тегло': (25, 30),
     'затлъстяване I степен': (30, 35),
     'затлъстяване II степен': (35, 40),
-    'затлъстяване III степен': (40, float('inf')),
+    'затлъстяване III степен': (40, float('+inf'))
 }
 
 
 def body_mass_index(weight, height):
-    return round(weight / height ** 2, 1)
+    return round(weight / (height ** 2), 1)
 
 
 def shape_of(weight, height):
-    bmi = body_mass_index(weight, height)
+    bms = body_mass_index(weight, height)
 
     for shape, bounderies in CATEGORIES.items():
-        if (is_between(bmi, *bounderies)):
+        if (is_between(bms, *bounderies)):
             return shape
 
 
