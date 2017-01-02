@@ -1,6 +1,6 @@
 import unittest
 
-import solution
+import first_solution as solution
 
 PERFECT_NUMBERS = {6, 28, 496, 8128}
 
