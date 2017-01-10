@@ -41,10 +41,36 @@ def darken_value(value, factor):
     return int(value - factor * (value - 0))
 
 
+def grayscale(fun):
+    def decorator(*args, **kwargs):
+        image = fun(*args, **kwargs)
+
+        return grayscale_image(image)
+
+    return decorator
+
+
+def grayscale_image(image):
+    return [[grayscale_pixel(pixel) for pixel in row] for row in image]
+
+
+def grayscale_pixel(pixel):
+    grayscale_value = int(
+        0.2126 * pixel[0] +
+        0.7152 * pixel[1] +
+        0.0722 * pixel[2]
+    )
+
+    return (grayscale_value, grayscale_value, grayscale_value)
+
+
+@grayscale
 def rotate_left(image):
     image = transponse_image(image)
 
     return image[::-1]
+
+print(rotate_left(image))
 
 
 def rotate_right(image):
