@@ -17,9 +17,13 @@ class SampleTest(unittest.TestCase):
         expression = y + twelve
         self.assertEqual(expression.evaluate(y=3), 15)
 
-    def test_constant_evaluation(self):
+    def test_variable_evaluation(self):
         self.assertEqual(solution.create_variable('x').evaluate(x=42), 42)
+
+    def test_constant_evaluation(self):
+        # self.assertEqual(solution.create_variable('x').evaluate(x=42), 42)
         self.assertEqual(solution.create_constant(5).evaluate(), 5)
+        self.assertEqual(solution.create_constant(10 + 5).evaluate(), 15)
 
 if __name__ == '__main__':
     unittest.main()
