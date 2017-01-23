@@ -1,9 +1,15 @@
 import unittest
-
 import solution
 
 
 class SampleTest(unittest.TestCase):
+    def test_literals(self):
+        x = solution.create_variable('x')
+        y = solution.create_variable('y')
+
+        expression_result = (x + 3 * (y - 2)).evaluate(x=1, y=4)
+        self.assertEqual(expression_result, 7)
+
     def test_five_plus_three(self):
         plus = solution.create_operator('+', lambda lhs, rhs: lhs + rhs)
         x = solution.create_variable('x')

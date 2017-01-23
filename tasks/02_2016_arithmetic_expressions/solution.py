@@ -1,13 +1,47 @@
+# Finishing solution
+# Check website for more creative solutions
+
+
 class Arithmetic:
     def __add__(self, other):
+        if isinstance(other, int):
+            other = Constant(other)
+
+        plus = Operator('+', lambda self, other: self + other)
+        return Expression(self, plus, other)
+
+    def __radd__(self, other):
+        if isinstance(other, int):
+            other = Constant(other)
+
         plus = Operator('+', lambda self, other: self + other)
         return Expression(self, plus, other)
 
     def __sub__(self, other):
+        if isinstance(other, int):
+            other = Constant(other)
+
         sub = Operator('-', lambda self, other: self - other)
         return Expression(self, sub, other)
 
+    def __rsub__(self, other):
+        if isinstance(other, int):
+            other = Constant(other)
+
+        sub = Operator('-', lambda self, other: other - self)
+        return Expression(self, sub, other)
+
     def __mul__(self, other):
+        if isinstance(other, int):
+            other = Constant(other)
+
+        mul = Operator('*', lambda self, other: self * other)
+        return Expression(self, mul, other)
+
+    def __rmul__(self, other):
+        if isinstance(other, int):
+            other = Constant(other)
+
         mul = Operator('*', lambda self, other: self * other)
         return Expression(self, mul, other)
 
@@ -23,6 +57,9 @@ class Constant(Arithmetic):
     def evaluate(self, **variables):
         return self.value
 
+    def __str__(self):
+        return str(self.value)
+
 
 class Variable(Arithmetic):
     def __init__(self, name):
@@ -34,6 +71,9 @@ class Variable(Arithmetic):
     @property
     def variable_names(self):
         return tuple(self.name,)
+
+    def __str__(self):
+        return self.name
 
 
 class Operator:
@@ -60,6 +100,13 @@ class Expression(Arithmetic):
     @property
     def variable_names(self):
         return self.lhs.variable_names + self.rhs.variable_names
+
+    def __str__(self):
+        return "({0} {1} {2})".format(
+            str(self.lhs),
+            str(self.operator),
+            str(self.rhs)
+        )
 
 
 def create_constant(value):
@@ -95,13 +142,12 @@ nine = create_constant(9)
 times = create_operator('*', lambda lhs, rhs: lhs * rhs)
 minus = create_operator('-', lambda lhs, rhs: lhs - rhs)
 plus = create_operator('+', lambda lhs, rhs: lhs + rhs)
+
 x = create_variable('x')
 y = create_variable('y')
 
 expression = create_expression(
     (six, times, ((x, minus, y), plus, nine))
 )
-
-(x + 3 * (y - 2)).evaluate(x=1, y=4)
 
 # print(expression.variable_names)
