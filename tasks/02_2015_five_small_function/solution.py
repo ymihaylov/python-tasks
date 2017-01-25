@@ -40,3 +40,46 @@ def reps(numbers):
         in numbers
         if numbers.count(number) > 1
     ])
+
+
+example_dict = {
+    'a': 1,
+    'c': {
+        'a': 2,
+        'b': {
+            'x': 5,
+            'y': 10,
+        }
+    },
+    'd': [1, 2, 3],
+}
+
+
+def flatten_dict(input_dict, left_key=''):
+    output_dict = {}
+
+    for right_key, value in input_dict.items():
+        key = left_key + right_key
+
+        if isinstance(value, dict):
+            output_dict.update(flatten_dict(value, key + '.'))
+        else:
+            output_dict[key] = value
+
+    return output_dict
+
+
+def unflatten_dict(input_dict):
+    flatten_dict = {}
+
+    for key, value in input_dict.items():
+        context = flatten_dict
+
+        for sub_key in key.split('.')[:-1]:
+            if sub_key not in context:
+                context[sub_key] = {}
+
+            context = context[sub_key]
+        context[key.split('.')[-1]] = value
+
+    return(flatten_dict)
