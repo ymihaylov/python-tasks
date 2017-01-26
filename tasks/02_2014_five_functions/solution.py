@@ -1,5 +1,5 @@
-def is_pangram(sentence):
-    alphabet = 'абвгдежзийклмнопрстуфхцчшщъьюя'
+def is_pangram2(sentence):
+    alphabet = set('абвгдежзийклмнопрстуфхцчшщъьюя')
 
     unique_letters = sorted(set([
         char.lower() for char
@@ -9,5 +9,10 @@ def is_pangram(sentence):
     return ''.join(unique_letters) == alphabet
 
 
-# print(is_pangram('Ах, чудна българска земьо, полюшвай цъфтящи жита!'))
-is_pangram('Hello World')
+def is_pangram(sentece):
+    alphabet = set('абвгдежзийклмнопрстуфхцчшщъьюя')
+
+    return alphabet.issubset(set(sentece.lower()))
+
+
+# print(is_pangram('Hello World'))
