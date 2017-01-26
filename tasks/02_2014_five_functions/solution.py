@@ -15,4 +15,7 @@ def is_pangram(sentece):
     return alphabet.issubset(set(sentece.lower()))
 
 
-# print(is_pangram('Hello World'))
+def char_histogram(text):
+    return {
+        char: text.count(char) for char in set(text)
+    }

@@ -22,20 +22,20 @@ class TestIsPangram(unittest.TestCase):
             solution.is_pangram('Веселите малки зайчета си щъкаха из двора.'))
 
 
-# class TestCharHistogram(unittest.TestCase):
+class TestCharHistogram(unittest.TestCase):
 
-#     def test_char_histogram_simple(self):
-#         self.assertEqual(
-#             {' ': 3, 'i': 2, 'a': 2, 'e': 2, 's': 2, 'h': 1, 'l': 1, 'm': 1,
-#              'n': 1, 'x': 1, '!': 1, 'p': 1, 'T': 1},
-#             solution.char_histogram('This is an example!'))
+    def test_char_histogram_simple(self):
+        self.assertEqual(
+            {' ': 3, 'i': 2, 'a': 2, 'e': 2, 's': 2, 'h': 1, 'l': 1, 'm': 1,
+             'n': 1, 'x': 1, '!': 1, 'p': 1, 'T': 1},
+            solution.char_histogram('This is an example!'))
 
-#     def test_char_histogram_with_both_alphabets(self):
-#         self.assertEqual(
-#             {' ': 3, 'i': 2, 'e': 2, 'н': 2, 's': 2, 'h': 1, '!': 1, 'l': 1,
-#              'm': 1, 'с': 1, 'т': 1, '#': 1, 'p': 1, 'x': 1, 'р': 1, 'a': 1,
-#              'а': 1, 'T': 1, 'е': 1},
-#             solution.char_histogram("#This is странен example!"))
+    def test_char_histogram_with_both_alphabets(self):
+        self.assertEqual(
+            {' ': 3, 'i': 2, 'e': 2, 'н': 2, 's': 2, 'h': 1, '!': 1, 'l': 1,
+             'm': 1, 'с': 1, 'т': 1, '#': 1, 'p': 1, 'x': 1, 'р': 1, 'a': 1,
+             'а': 1, 'T': 1, 'е': 1},
+            solution.char_histogram("#This is странен example!"))
 
 
 # class TestSortBy(unittest.TestCase):
