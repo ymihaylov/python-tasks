@@ -38,23 +38,23 @@ class TestCharHistogram(unittest.TestCase):
             solution.char_histogram("#This is странен example!"))
 
 
-# class TestSortBy(unittest.TestCase):
+class TestSortBy(unittest.TestCase):
 
-#     def test_sort_by_empty(self):
-#             self.assertEqual([], solution.sort_by(lambda x, y: x - y, []))
+    def test_sort_by_empty(self):
+            self.assertEqual([], solution.sort_by(lambda x, y: x - y, []))
 
-#     def test_sort_by_simple_test(self):
-#         self.assertEqual(
-#             ['a', 'ab', 'abc'],
-#             solution.sort_by(lambda x, y: len(x) - len(y), ['abc', 'a', 'ab']))
+    def test_sort_by_simple_test(self):
+        self.assertEqual(
+            ['a', 'ab', 'abc'],
+            solution.sort_by(lambda x, y: len(x) - len(y), ['abc', 'a', 'ab']))
 
-#     def test_sort_by_simple_test_2(self):
-#         self.assertEqual(
-#             [0, 2, 4, 1, 3, 5],
-#             solution.sort_by(lambda x, y: x % 2 - y % 2, [0, 1, 2, 3, 4, 5]))
+    def test_sort_by_simple_test_2(self):
+        self.assertEqual(
+            [0, 2, 4, 1, 3, 5],
+            solution.sort_by(lambda x, y: x % 2 - y % 2, [0, 1, 2, 3, 4, 5]))
 
-#     def test_sort_by_one_element(self):
-#         self.assertEqual([1], solution.sort_by(lambda x, y: x - y, [1]))
+    def test_sort_by_one_element(self):
+        self.assertEqual([1], solution.sort_by(lambda x, y: x - y, [1]))
 
 
 # class TestGroupByType(unittest.TestCase):
