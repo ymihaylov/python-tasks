@@ -29,6 +29,14 @@ def sort_by(func, arguments):
 
 
 def group_by_type(dictionary):
+    result = {}
 
-# help(sorted)
-sort_by(lambda x, y: len(x) - len(y), ['a', 'ab', 'abc'])
+    for key, value in dictionary.items():
+        if (type(key) in result.keys()):
+            result[type(key)].update({key: value})
+        else:
+            result[type(key)] = {key: value}
+
+    return result
+
+print(group_by_type({'a': 12, 'b': 1, 1: "foo"}))

@@ -57,42 +57,43 @@ class TestSortBy(unittest.TestCase):
         self.assertEqual([1], solution.sort_by(lambda x, y: x - y, [1]))
 
 
-# class TestGroupByType(unittest.TestCase):
+class TestGroupByType(unittest.TestCase):
 
-#     def test_group_by_type_empty(self):
-#             self.assertEqual({}, solution.group_by_type({}))
+    def test_group_by_type_empty(self):
+            self.assertEqual({}, solution.group_by_type({}))
 
-#     def test_group_by_type(self):
-#         self.assertEqual(
-#             {str: {'b': 1, 'a': 12}, int: {1: 'foo'}},
-#             solution.group_by_type({'a': 12, 'b': 1, 1: 'foo'}))
+    def test_group_by_type(self):
+        self.assertEqual(
+            {str: {'b': 1, 'a': 12}, int: {1: 'foo'}},
+            solution.group_by_type({'a': 12, 'b': 1, 1: 'foo'}))
 
-#     def test_another_group_by_type(self):
-#         self.assertEqual(
-#             {str: {'c': 15}, int: {1: 'b'},
-#              tuple: {(1, 2): 12, ('a', 1): 1}},
-#             solution.group_by_type({(1, 2): 12, ('a', 1): 1, 1: 'b', 'c': 15}))
+    def test_another_group_by_type(self):
+        self.assertEqual(
+            {str: {'c': 15}, int: {1: 'b'},
+             tuple: {(1, 2): 12, ('a', 1): 1}},
+            solution.group_by_type({(1, 2): 12, ('a', 1): 1, 1: 'b', 'c': 15}))
 
-#     def test_group_by_type_with_frozen_set_key(self):
-#         test_set = frozenset([1, 2, 3])
-#         self.assertEqual(
-#             {frozenset: {test_set: 15}, tuple: {(1, 2): 12, ('a', 1): 1}},
-#             solution.group_by_type({(1, 2): 12, ('a', 1): 1, test_set: 15}))
+    def test_group_by_type_with_frozen_set_key(self):
+        test_set = frozenset([1, 2, 3])
+        self.assertEqual(
+            {frozenset: {test_set: 15}, tuple: {(1, 2): 12, ('a', 1): 1}},
+            solution.group_by_type({(1, 2): 12, ('a', 1): 1, test_set: 15}))
 
-#     def test_group_by_type_with_functions(self):
-#         double_lambda = lambda x: 2 * x
-#         self.assertEqual(
-#             {
-#                 types.LambdaType: {double_lambda: 'double'},
-#                 str: {'three': 3},
-#                 tuple: {('list', 'of', 'numbers'): [42, 73]}
-#             },
-#             solution.group_by_type({
-#                 double_lambda: 'double',
-#                 'three': 3,
-#                 ('list', 'of', 'numbers'): [42, 73]
-#             })
-#         )
+    def test_group_by_type_with_functions(self):
+        double_lambda = lambda x: 2 * x
+
+        self.assertEqual(
+            {
+                types.LambdaType: {double_lambda: 'double'},
+                str: {'three': 3},
+                tuple: {('list', 'of', 'numbers'): [42, 73]}
+            },
+            solution.group_by_type({
+                double_lambda: 'double',
+                'three': 3,
+                ('list', 'of', 'numbers'): [42, 73]
+            })
+        )
 
 
 # class TestAnagrams(unittest.TestCase):
