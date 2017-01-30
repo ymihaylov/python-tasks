@@ -80,7 +80,8 @@ class TestGroupByType(unittest.TestCase):
             solution.group_by_type({(1, 2): 12, ('a', 1): 1, test_set: 15}))
 
     def test_group_by_type_with_functions(self):
-        double_lambda = lambda x: 2 * x
+        def double_lambda(x):
+            return 2 * x
 
         self.assertEqual(
             {
