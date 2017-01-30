@@ -97,44 +97,44 @@ class TestGroupByType(unittest.TestCase):
         )
 
 
-# class TestAnagrams(unittest.TestCase):
+class TestAnagrams(unittest.TestCase):
 
-#     def test_list_of_latin_anagrams(self):
-#         words = ['army', 'mary', 'ramy', 'astronomer', 'moonstarer',
-#                  'debit card', 'bad credit', 'bau']
-#         anagrams = [['army', 'mary', 'ramy'],
-#                     ['bad credit', 'debit card'],
-#                     ['astronomer', 'moonstarer'], ['bau']]
+    def test_list_of_latin_anagrams(self):
+        words = ['army', 'mary', 'ramy', 'astronomer', 'moonstarer',
+                 'debit card', 'bad credit', 'bau']
+        anagrams = [['army', 'mary', 'ramy'],
+                    ['bad credit', 'debit card'],
+                    ['astronomer', 'moonstarer'], ['bau']]
 
-#         self.assertEqual(
-#             set(map(frozenset, anagrams)),
-#             set(map(frozenset, solution.anagrams(words))))
+        self.assertEqual(
+            set(map(frozenset, anagrams)),
+            set(map(frozenset, solution.anagrams(words))))
 
-#     def test_with_list_of_cyrilic_anagrams(self):
-#         words = ['кавалер', 'акварел']
-#         anagrams = [['кавалер', 'акварел']]
+    def test_with_list_of_cyrilic_anagrams(self):
+        words = ['кавалер', 'акварел']
+        anagrams = [['кавалер', 'акварел']]
 
-#         self.assertEqual(
-#             set(map(frozenset, anagrams)),
-#             set(map(frozenset, solution.anagrams(words))))
+        self.assertEqual(
+            set(map(frozenset, anagrams)),
+            set(map(frozenset, solution.anagrams(words))))
 
-#     def test_with_different_cases(self):
-#         words = ["Dave Barry", "Ray Adverb"]
-#         anagrams = [["Dave Barry", "Ray Adverb"]]
+    def test_with_different_cases(self):
+        words = ["Dave Barry", "Ray Adverb"]
+        anagrams = [["Dave Barry", "Ray Adverb"]]
 
-#         self.assertEqual(
-#             set(map(frozenset, anagrams)),
-#             set(map(frozenset, solution.anagrams(words))))
+        self.assertEqual(
+            set(map(frozenset, anagrams)),
+            set(map(frozenset, solution.anagrams(words))))
 
-#     def test_with_different_symbols(self):
-#         words = ["Tom Marvolo Riddle", "I am Lord Voldemort",
-#                  "Tom Cruise", "So I'm cuter"]
-#         anagrams = [["Tom Marvolo Riddle", "I am Lord Voldemort"],
-#                     ["Tom Cruise", "So I'm cuter"]]
+    def test_with_different_symbols(self):
+        words = ["Tom Marvolo Riddle", "I am Lord Voldemort",
+                 "Tom Cruise", "So I'm cuter"]
+        anagrams = [["Tom Marvolo Riddle", "I am Lord Voldemort"],
+                    ["Tom Cruise", "So I'm cuter"]]
 
-#         self.assertEqual(
-#             set(map(frozenset, anagrams)),
-#             set(map(frozenset, solution.anagrams(words))))
+        self.assertEqual(
+            set(map(frozenset, anagrams)),
+            set(map(frozenset, solution.anagrams(words))))
 
 if __name__ == '__main__':
     unittest.main()

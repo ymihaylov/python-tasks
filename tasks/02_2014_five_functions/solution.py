@@ -1,4 +1,5 @@
 from functools import cmp_to_key
+from collections import defaultdict
 
 
 def is_pangram2(sentence):
@@ -29,14 +30,13 @@ def sort_by(func, arguments):
 
 
 def group_by_type(dictionary):
-    result = {}
+    result = defaultdict(dict)
 
     for key, value in dictionary.items():
-        if (type(key) in result.keys()):
-            result[type(key)].update({key: value})
-        else:
-            result[type(key)] = {key: value}
+        result[type(key)].update({key: value})
 
     return result
 
-print(group_by_type({'a': 12, 'b': 1, 1: "foo"}))
+
+def anagrams(string_list):
+    pass
