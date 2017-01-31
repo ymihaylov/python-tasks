@@ -1,5 +1,6 @@
 from functools import cmp_to_key
 from collections import defaultdict
+from itertools import groupby
 
 
 def is_pangram2(sentence):
@@ -38,5 +39,19 @@ def group_by_type(dictionary):
     return result
 
 
-def anagrams(string_list):
-    pass
+def sort_to_lower(key):
+    key = sorted(key.lower())
+
+    key = list(
+        ch for ch in key
+        if ch.isalpha()
+    )
+
+    return sorted(key)
+
+
+def anagrams(words):
+    return [
+        list(group) for key, group
+        in groupby(sorted(words, key=sort_to_lower), sort_to_lower)
+    ]
