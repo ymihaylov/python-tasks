@@ -11,29 +11,29 @@ class SecondHomeworkSimpleTests(unittest.TestCase):
 
         self.assertEqual(expected, actual)
 
-    # def test_iterate_start_with_identity_function(self):
-    #     # there's no such word, really
-    #     bracketisers = solution.iterate(lambda x: '(' + x + ')')
-    #     no_brackets = next(bracketisers)
-    #     self.assertEqual('hello world', no_brackets('hello world'))
+    def test_iterate_start_with_identity_function(self):
+        # there's no such word, really
+        bracketisers = solution.iterate(lambda x: '(' + x + ')')
+        no_brackets = next(bracketisers)
+        self.assertEqual('hello world', no_brackets('hello world'))
 
-    # def test_iterate_ordered_calls(self):
-    #     powers_of_two = solution.iterate(lambda x: x * 2)
-    #     f = next(powers_of_two)
-    #     self.assertEqual(1 * 'eggs', f('eggs'))
-    #     f = next(powers_of_two)
-    #     self.assertEqual(2 * 'ham', f('ham'))
-    #     f = next(powers_of_two)
-    #     self.assertEqual(4 * 'spam', f('spam'))
-    #     f = next(powers_of_two)
-    #     self.assertEqual(8 * 'spameggs', f('spameggs'))
+    def test_iterate_ordered_calls(self):
+        powers_of_two = solution.iterate(lambda x: x * 2)
+        f = next(powers_of_two)
+        self.assertEqual(1 * 'eggs', f('eggs'))
+        f = next(powers_of_two)
+        self.assertEqual(2 * 'ham', f('ham'))
+        f = next(powers_of_two)
+        self.assertEqual(4 * 'spam', f('spam'))
+        f = next(powers_of_two)
+        self.assertEqual(8 * 'spameggs', f('spameggs'))
 
-    # def test_zip_with_simple(self):
-    #     first_names = ['Charlie', 'Dizzy']
-    #     last_names = ['Parker', 'Gillespie']
-    #     expected = ['CharlieParker', 'DizzyGillespie']
-    #     actual = solution.zip_with(str.__add__, first_names, last_names)
-    #     self.assertEqual(expected, list(actual))
+    def test_zip_with_simple(self):
+        first_names = ['Charlie', 'Dizzy']
+        last_names = ['Parker', 'Gillespie']
+        expected = ['CharlieParker', 'DizzyGillespie']
+        actual = solution.zip_with(str.__add__, first_names, last_names)
+        self.assertEqual(expected, list(actual))
 
     # def test_cache_call_is_cached(self):
     #     call_count = 0

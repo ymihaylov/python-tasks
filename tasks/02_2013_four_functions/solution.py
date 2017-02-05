@@ -1,4 +1,5 @@
 from collections import defaultdict
+from itertools import count
 
 
 def groupby(func, items):
@@ -10,9 +11,28 @@ def groupby(func, items):
     return dict(grouped_items)
 
 
-def iterate(func):
-    break
+def double(x):
+    return 2 * x
 
-bracketisers = iterate(lambda x: '(' + x + ')')
-no_brackets = next(bracketisers)
-no_brackets('hello world')
+
+def iterate(func):
+    def composer(n):
+        return lambda x: func(composer(n - 1)(x)) if n > 0 else x
+
+    return (composer(n) for n in count())
+
+
+# i = iterate(double)
+
+# f = next(i)
+# f(3)  # 3
+
+# f = next(i)
+# f(3)  # 6
+
+# f = next(i)
+# f(3)  # 12
+
+# bracketisers = iterate(lambda x: '(' + x + ')')
+# no_brackets = next(bracketisers)
+# no_brackets('hello world')
