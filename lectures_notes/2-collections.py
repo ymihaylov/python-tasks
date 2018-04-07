@@ -3,6 +3,7 @@ import math
 foods = ['spam', 'eggs', 'ham']
 things = foods
 things[1] = 'chips'
+
 # print(foods[1]) # prints chips
 
 my_list = '12 34 16'.split() + [(False, False)]
@@ -29,7 +30,7 @@ cute_animals.index('raccoon')
 cute_animals.count('raccoon')
 cute_animals.append('raccoon')
 cute_animals.count('raccoon')
-cute_animals.extend(['panda', 'manda']) # like + but its faster
+cute_animals.extend(['panda', 'manda'])  # like + but its faster
 cute_animals.sort()
 
 # range - iterable
@@ -40,13 +41,15 @@ range(13, 0, -1)
 # Tuples
 # Tuples cannot be change, but can change inner structures
 # (if the element is array)
-people = 'Niki', 'Pesho', 'Gosho' # tuple
-people = ('Niki') # people is string 'Niki'
+people = 'Niki', 'Pesho', 'Gosho'  # tuple
+people = ('Niki')  # people is string 'Niki'
 
 numbers = (1, 2, 3)
 a, b, c = numbers
 
-a, *b, c = 1, 2, 3, 4, 5 # b is list
+a, *b, c = 1, 2, 3, 4, 5
+print(b)
+# b is list
 
 # Compare tuple lexicaly
 
@@ -63,9 +66,10 @@ data = [('John', 'Tilsit'), ('Eric', 'Cheshire'), ('Michael', 'Camembert'),
         ('Terry', 'Gouda'), ('Terry', 'Port Salut'), ('Michael', 'Edam'),
         ('Eric', 'Ilchester'), ('John', 'Fynbo')]
 
+
 def cheeses_by_owner(cheeses_data):
     by_owner = {}
-    for owner, cheese in cheeses_data: # <- tuple unpacking; same as (o, c)
+    for owner, cheese in cheeses_data:  # <- tuple unpacking; same as (o, c)
         if owner in by_owner:
             by_owner[owner].append(cheese)
         else:
