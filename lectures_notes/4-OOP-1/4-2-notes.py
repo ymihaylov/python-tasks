@@ -14,7 +14,7 @@ type(42)  # Check the type of object
 
 class Vector:
     # Constructor, doesnt return value (initializator)
-    # First argument is always named safe
+    # First argument is always named self
     # Atributes doesnt need declaration (Classes are open)
     # But __init__ is not very first function that python invokes
     def __init__(self, x, y):

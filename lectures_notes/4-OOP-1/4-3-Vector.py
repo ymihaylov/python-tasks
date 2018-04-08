@@ -50,7 +50,7 @@ v1 = Vector(1.0, 2.0, 3.0)
 v2 = Vector(1.0, 2.0, 3.0)
 v3 = Vector(7.0, 8.0, 9.0)
 
-# print(v1 == v2)
+# print(v1 == v1)
 
 # print(Vector.length(v1))
 # print(Vector.length(v2))
@@ -177,6 +177,7 @@ class Goat:
     def description(self):
         return "{} the {} goat".format(self.name, self.trait)
 
+
 g = Goat('George', 'Gutsy')
 # print(g.description)
 
@@ -215,7 +216,7 @@ class Vector2:
 
     __add__ = addition
 
-print(Vector2(1.0, 2.0, 3.0) + Vector2(4.0, 5.0, 6.0))
+# print(Vector2(1.0, 2.0, 3.0) + Vector2(4.0, 5.0, 6.0))
 # Functions are first class objects
 # Methods are attributes of the class
 # Classes are dymaic

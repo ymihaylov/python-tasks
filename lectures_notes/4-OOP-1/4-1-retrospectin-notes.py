@@ -32,4 +32,4 @@ def snitch(init_message):
 def baba(a, b):
     return a / b
 
-# baba(4, 2)
+baba(4, 2)
