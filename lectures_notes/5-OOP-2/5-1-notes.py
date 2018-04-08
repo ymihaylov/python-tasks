@@ -18,7 +18,7 @@ class Vector:
         elif index == 2:
             self.z = value
         else:
-            pass  # тук можем да възбудим изключение
+            pass  # we can raise exception here
 
     def __str__(self):
         return str((self.x, self.y, self.z))
@@ -66,7 +66,7 @@ class SpamOld:
     def answer(self):
         return 42
 
-# spam = Spam()
+# spam = SpamOld()
 # spam.foo = 42
 # print(spam.foo)
 # print(spam)
@@ -133,6 +133,9 @@ class Spam:
     def spam(self):
         return 'spam'
 
+    def eggs(self):
+        return 'spam'
+
 
 class Eggs:
     def eggs(self):
@@ -142,6 +145,7 @@ class Eggs:
 class CheeseShop(Spam, Eggs):
     def food(self):
         return self.spam() + ' and ' + self.eggs()
+
 
 ###
 # Mixins - добра причина (една от малкото) за използване на множествено насл.
@@ -182,10 +186,10 @@ class Derived(Base):
         print("Derived:", self.__name, self._age)
 
 derived = Derived("John", 0, "Doe")
-print(derived.report_base())    # Base: John 33
-print(derived.report_derived())     # Derived: Doe 33
-print(derived._Base__name)    # John, Doe
-print(derived._Derived__name)
+# print(derived.report_base())    # Base: John 33
+# print(derived.report_derived())     # Derived: Doe 33
+# print(derived._Base__name)    # John, Doe
+# print(derived._Derived__name)
 
 ###
 # isinstance
