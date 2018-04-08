@@ -10,17 +10,18 @@
 
 # Nested functions
 def outer(x):
-    print(x)
+    print('Outer {}'.format(x))
 
     def inner():
         x = 0
-        print(x)
+        print('Inner {}'.format(x))
 
     inner()
 
-    print(x)
+    print('Outer {}'.format(x))
 
-# outer(5) # 5, 0, 5
+
+# outer(5)  # 5, 0, 5
 
 # https://docs.python.org/3/reference/executionmodel.html#naming-and-binding
 
@@ -37,11 +38,11 @@ def start(x):
 first_inc = start(0)
 second_inc = start(8)
 
-first_inc(3)
-second_inc(3)
+# print(first_inc(3))
+# print(second_inc(3))
 
-first_inc(1)
-second_inc(2)
+# print(first_inc(1))
+# print(second_inc(2))
 
 
 # One serios problem
@@ -50,9 +51,13 @@ def spam(n):
 
     return 'I would like {} and spam'.format(", ".join(spams))
 
+# print(spam(5))
+
 
 def eggs(n):
     return 'I would like {} eggs'.format(n)
+
+# print(eggs(2))
 
 
 def served_by(func, server):
@@ -61,8 +66,8 @@ def served_by(func, server):
 
     return cached_server
 
-# eggs = served_by(eggs, 'sir')
-# spam = served_by(spam, 'madam')
+eggs = served_by(eggs, 'sir')
+spam = served_by(spam, 'madam')
 
 
 # Lets thanks
@@ -80,7 +85,7 @@ spam = thank_you(served_by(spam, 'sir'))
 
 def fibonacci_old(x):
     if x in [0, 1]:
-        return 1
+        return x
 
     return fibonacci(x - 1) + fibonacci(x - 2)
 
@@ -108,18 +113,19 @@ def memorize(func):
 
 @memorize
 def fibonacci(x):
+    print('tuk')
     if x in [0, 1]:
-        return 1
+        return x
 
     return fibonacci(x - 1) + fibonacci(x - 2)
 
 
 # fibonacci = memorize(fibonacci)
-# print(fibonacci(5))
+# print(fibonacci(3))
+
 
 # Second Example of decorators
 def notifyme(f):
-
     def logged(*args, **kwargs):
         print(f.__name__, ' called with', args, 'and', kwargs)
 
@@ -131,6 +137,8 @@ def notifyme(f):
 @notifyme
 def square(x):
     return x * x
+
+# print(square(2))
 
 # its same like
 # square = notifyme(square)

@@ -19,4 +19,4 @@ def accepts(*types):
 def multiply(x, y):
     return x * y
 
-multiply(5, 'dsadsa')
+multiply(5, 5)

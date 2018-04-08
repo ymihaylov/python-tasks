@@ -26,3 +26,5 @@ def spam(n):
 @served_by('madam')
 def eggs(n):
     return 'I would like {} eggs'.format(n)
+
+print(eggs(2))

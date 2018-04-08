@@ -9,7 +9,7 @@ things[1] = 'chips'
 my_list = '12 34 16'.split() + [(False, False)]
 my_dict = dict(my_list)
 # print(my_list)
-# print(my_dict[0])
+# print(my_dict)
 
 # In python every collection is iterable
 
@@ -47,8 +47,8 @@ people = ('Niki')  # people is string 'Niki'
 numbers = (1, 2, 3)
 a, b, c = numbers
 
-a, *b, c = 1, 2, 3, 4, 5
-print(b)
+# a, *b, c = 1, 2, 3, 4, 5
+# print(b)
 # b is list
 
 # Compare tuple lexicaly
@@ -96,7 +96,7 @@ def cheeses_by_owner(cheeses_data):
 # print({int(math.sqrt(x)) for x in range(1, 100)})
 
 # Dict comprehension
-# print({i: chr(65+i) for i in range(10)})
+# print({i: chr(65 + i) for i in range(10)})
 
 # Other collections
 # deque - two way queue
