@@ -20,5 +20,6 @@ class PowerOfTwoTests(unittest.TestCase):
         self.assertFalse(solution.powers_of_two_remain([4, 8, 12]))
         self.assertFalse(solution.powers_of_two_remain([8, 16, 24]))
 
+
 if __name__ == '__main__':
     unittest.main()

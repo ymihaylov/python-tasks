@@ -24,3 +24,4 @@ def shape_of(weight, height):
 
 def is_between(value, minimum, maximum):
     return minimum < value <= maximum
+

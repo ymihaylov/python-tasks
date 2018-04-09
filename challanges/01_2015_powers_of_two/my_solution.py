@@ -25,3 +25,4 @@ def max_powers_of_two(number):
             numbers.append(i)
 
     return numbers
+

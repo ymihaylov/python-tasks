@@ -5,7 +5,6 @@ from body_mass_index import shape_of
 
 
 class TestBodyMassIndex(unittest.TestCase):
-
     def test_shape_of(self):
         self.assertEqual(shape_of(14, 1), 'тежко недохранване')
         self.assertEqual(shape_of(15, 1), 'тежко недохранване')
