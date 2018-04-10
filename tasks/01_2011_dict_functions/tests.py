@@ -2,7 +2,6 @@ import unittest
 
 import solution
 
-
 class TestSolution(unittest.TestCase):
     def test_make_multiset_no_duplicates(self):
         self.assertEqual(solution.make_multiset([1, 2]), {1: 1, 2: 1})
