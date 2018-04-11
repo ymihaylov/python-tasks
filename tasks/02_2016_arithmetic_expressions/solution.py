@@ -117,8 +117,8 @@ def create_variable(name):
     return Variable(name)
 
 
-def create_operator(symbol, function):
-    return Operator(symbol, function)
+def create_operator(symbol, func):
+    return Operator(symbol, func)
 
 
 def create_expression(expression_structure):
@@ -136,17 +136,3 @@ def create_expression(expression_structure):
         stack.append(expression)
 
     return stack[0]
-
-
-six = create_constant(6)
-nine = create_constant(9)
-times = create_operator('*', lambda lhs, rhs: lhs * rhs)
-minus = create_operator('-', lambda lhs, rhs: lhs - rhs)
-plus = create_operator('+', lambda lhs, rhs: lhs + rhs)
-
-x = create_variable('x')
-y = create_variable('y')
-
-expression = create_expression(
-    (six, times, ((x, minus, y), plus, nine))
-)
