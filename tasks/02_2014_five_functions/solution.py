@@ -3,6 +3,12 @@ from collections import defaultdict
 from itertools import groupby
 
 
+def is_pangram(sentece):
+    alphabet = set('абвгдежзийклмнопрстуфхцчшщъьюя')
+
+    return alphabet.issubset(set(sentece.lower()))
+
+
 def is_pangram2(sentence):
     alphabet = set('абвгдежзийклмнопрстуфхцчшщъьюя')
 
@@ -12,12 +18,6 @@ def is_pangram2(sentence):
     ]))
 
     return ''.join(unique_letters) == alphabet
-
-
-def is_pangram(sentece):
-    alphabet = set('абвгдежзийклмнопрстуфхцчшщъьюя')
-
-    return alphabet.issubset(set(sentece.lower()))
 
 
 def char_histogram(text):
