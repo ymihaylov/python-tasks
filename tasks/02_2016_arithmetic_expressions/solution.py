@@ -54,7 +54,7 @@ class Constant(Arithmetic):
     def __init__(self, value):
         self.value = value
 
-    def evaluate(self, **variables):
+    def evaluate(self):
         return self.value
 
     def __str__(self):
@@ -77,9 +77,9 @@ class Variable(Arithmetic):
 
 
 class Operator:
-    def __init__(self, symbol, function):
+    def __init__(self, symbol, func):
         self.symbol = symbol
-        self.function = function
+        self.function = func
 
     def __str__(self):
         return self.symbol
@@ -137,6 +137,7 @@ def create_expression(expression_structure):
 
     return stack[0]
 
+
 six = create_constant(6)
 nine = create_constant(9)
 times = create_operator('*', lambda lhs, rhs: lhs * rhs)
@@ -149,5 +150,3 @@ y = create_variable('y')
 expression = create_expression(
     (six, times, ((x, minus, y), plus, nine))
 )
-
-# print(expression.variable_names)

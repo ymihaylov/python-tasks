@@ -31,7 +31,8 @@ CHINESE_SIGNS = [
 
 def interpret_western_sign(day, month):
     sign = WESTERN_SIGNS[month - 1]
-    if (day >= sign[1]):
+
+    if day >= sign[1]:
         return sign[0]
 
     previous_sign = WESTERN_SIGNS[month - 2]

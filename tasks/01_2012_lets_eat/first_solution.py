@@ -20,5 +20,3 @@ def prepare_meal(number):
 
     return meal
 
-
-print(prepare_meal(5))

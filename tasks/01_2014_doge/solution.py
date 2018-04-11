@@ -13,6 +13,7 @@ def wow_such_much(start, end):
 
     return result
 
+
 PARASITIC_WORDS = [
     'wow',
     'lol',
