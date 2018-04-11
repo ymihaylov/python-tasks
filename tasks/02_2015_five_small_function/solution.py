@@ -28,12 +28,12 @@ def extract_type2(symbols, type):
 
 # Reversed dict
 def reversed_dict(normal_dict):
+    return (dict(zip(normal_dict.values(), normal_dict.keys())))
     # return dict((value, key) for (key, value) in normal_dict.items())
-    # return(dict(zip(dict_for_reverse.values(), dict_for_reverse.keys())))
-    return dict(map(reversed, normal_dict.items()))
+    # return dict(map(reversed, normal_dict.items()))
 
 
-# reps
+# Reps
 def reps(numbers):
     return tuple([
         number for number
