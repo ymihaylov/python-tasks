@@ -24,7 +24,7 @@ def iterate(func):
 
 # i = iterate(double)
 
-# f = next(i)
+# print(i)
 # f(3)  # 3
 
 # f = next(i)
