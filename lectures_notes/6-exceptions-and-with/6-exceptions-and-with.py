@@ -103,7 +103,7 @@ except IOError as e:
 # In other words:
 with open('/etc/passwd') as passwd:
     buffer = passwd.readlines()
-print('Done')
+# print('Done')
 
 # Is the same as
 passwd = open('/etc/passwd').__enter__()
@@ -112,10 +112,10 @@ try:
     passwd.__exit__(None, None, None)
 except Exception:
     passwd.__exit__(*sys.exc_info())
-print('Done')
+# print('Done')
 
 
-#Manager example
+# Manager example
 class Manager:
     def __enter__(self):
         print("I've been entered!")
