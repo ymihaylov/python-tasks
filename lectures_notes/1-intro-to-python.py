@@ -1,26 +1,26 @@
 # For docs
 # help(str)
 
-my_var = 'spam'.upper()
+# my_var = 'spam'.upper()
 # print(my_var, len(my_var), my_var[1])
 
-# Integer doesnt have max size
+# Integer doesn't have max size
 # print(2 ** 4 ** 8)
 
 # True, False, None
-# When function doesnt return anything, it returns None
+# When function doesnt return anything, it returns None!
 
 # print(type(1), type('hello'), type(len))
 # Everything is an object and it has class (functions too)
 # print(type(type(type)))
 
-# Python is dynamic language. Values has type, but names doesnt.
+# Python is dynamic language. Values has type, but names doesn't.
 
 # Structures
 # List
 my_list = [1, 2, 3]
 # print(my_list)
-# Mutable, without fixed lenght
+# Mutable, without fixed length
 # Guaranteed arrangement
 # Heterogeneous - Different types of elements
 my_list.append(5)
@@ -63,7 +63,7 @@ a += 2
 a = [1, 2, 3]
 a.append(4)
 # This changes the list that is linked to a. Lists are immutable
-# As key of dict or elemnt of set may be used only immutable values
+# As key of dict or element of set may be used only immutable values
 
 # Conditions
 # a = 5
@@ -91,20 +91,20 @@ a.append(4)
 # for name, age in people.items():
 #     print('{} is {} years old.'.format(name, age))
 
-# break, continue - only fo innermost loop
+# break, continue - only for innermost loop
 
 
 # Functions
-def multiply(a, b=2):
-    return a * b
+# def multiply(a, b=2):
+#     return a * b
 
 # print(multiply(5, 10))
 
 
-def varfunc(some_arg, *args, **kwargs):
-    print(some_arg)
-    print(args)
-    print(kwargs)
+# def varfunc(some_arg, *args, **kwargs):
+#     print(some_arg)
+#     print(args)
+#     print(kwargs)
 
 # varfunc('arg1', 1, 2, 3, name='Bob', age=15)
 # args and kwargs names are conventions
@@ -112,12 +112,13 @@ def varfunc(some_arg, *args, **kwargs):
 
 # Lambda Functions
 # Functions are objects
-def baba(count):
-    print('Banica {}'.format(count))
+def baba(number):
+    print('Banica {}'.format(number))
 
 
 def call(function, times):
     for _ in range(times):
         function(_)
+
 
 call(baba, 5)

@@ -2,6 +2,7 @@ def served_by(server):
     def decorator(func):
         def cached_server(n):
             return '{}, dear {}'.format(func(n), server)
+
         return cached_server
 
     return decorator
@@ -15,16 +16,15 @@ def thank_you(func):
 
 
 @thank_you
-@served_by('sir')
+@served_by('madam')
 def spam(n):
     spams = ('spam', ) * (n - 1)
 
     return 'I would like {} and spam'.format(", ".join(spams))
-
 
 @thank_you
 @served_by('madam')
 def eggs(n):
     return 'I would like {} eggs'.format(n)
 
-print(eggs(2))
+# print(eggs(2))

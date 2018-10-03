@@ -13,7 +13,7 @@ def outer(x):
     print('Outer {}'.format(x))
 
     def inner():
-        x = 0
+        x = 0  # If I comment this x is 5 from outer
         print('Inner {}'.format(x))
 
     inner()
@@ -35,6 +35,7 @@ def start(x):
 
     return increment
 
+
 first_inc = start(0)
 second_inc = start(8)
 
@@ -45,7 +46,7 @@ second_inc = start(8)
 # print(second_inc(2))
 
 
-# One serios problem
+# One serious problem
 def spam(n):
     spams = ('spam', ) * (n - 1)
 
@@ -90,7 +91,7 @@ def fibonacci_old(x):
     return fibonacci(x - 1) + fibonacci(x - 2)
 
 
-# Recursive version of fibonacci is very very slow
+# Recursive version of fibonacci is very VERY slow!
 # We can calculate every result only once
 
 # f(function) -> function
@@ -113,7 +114,6 @@ def memorize(func):
 
 @memorize
 def fibonacci(x):
-    print('tuk')
     if x in [0, 1]:
         return x
 
@@ -121,7 +121,7 @@ def fibonacci(x):
 
 
 # fibonacci = memorize(fibonacci)
-# print(fibonacci(3))
+# print(fibonacci(10))
 
 
 # Second Example of decorators
@@ -138,7 +138,7 @@ def notifyme(f):
 def square(x):
     return x * x
 
-# print(square(2))
+print(square(2))
 
 # its same like
 # square = notifyme(square)

@@ -6,9 +6,10 @@ things[1] = 'chips'
 
 # print(foods[1]) # prints chips
 
-my_list = '12 34 16'.split() + [(False, False)]
-my_dict = dict(my_list)
+# my_list = '12 34 16'.split() + [(False, False)]
 # print(my_list)
+#
+# my_dict = dict(my_list)
 # print(my_dict)
 
 # In python every collection is iterable
@@ -30,7 +31,7 @@ cute_animals.index('raccoon')
 cute_animals.count('raccoon')
 cute_animals.append('raccoon')
 cute_animals.count('raccoon')
-cute_animals.extend(['panda', 'manda'])  # like + but its faster
+cute_animals.extend(['panda', 'manda'])  # like + but its faster!
 cute_animals.sort()
 
 # range - iterable
@@ -51,10 +52,10 @@ a, b, c = numbers
 # print(b)
 # b is list
 
-# Compare tuple lexicaly
+# Compare tuple lexically
 
 # Sets
-# {} is not empty set
+# {} is not empty set, but is empty dict
 # Operations with sets like math
 
 # Dict
@@ -77,15 +78,16 @@ def cheeses_by_owner(cheeses_data):
 
     return by_owner
 
+
 # print(cheeses_by_owner(data))
 
 # map/filter/reduce/all/any
 # map and filter are lazy
 
-# Comprehesion
+# Comprehension
 # print([x * x for x in range(0, 10)])
 # print([x * x for x in range(0, 10) if x % 2])
-# print([(x, y) for x in [1, 2, 3] for y in [3, 1, 4] if x != y])
+# print([(x, y) for x in [1, 2, 3] for y in [1, 3, 4] if x != y])
 
 # Generator expression
 # () instead of {}
